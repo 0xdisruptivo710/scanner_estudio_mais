@@ -1,0 +1,128 @@
+{
+  "version": 1,
+  "generated_at": "2026-05-16",
+  "source": "wts_panel_mapping_v2 WHERE client_handle='estudio-mais' AND entity_type='tag' (90 tags lidas via MCP Supabase). Strings preservadas EXATAMENTE como na WTS (incluindo emojis e espacos em branco) para casar com a resolucao nome->id do tagsCatalog. Duplicatas conhecidas (INDICACAO x 'Indicacao ') sao entidades distintas na WTS e foram mantidas.",
+  "client_handle": "estudio-mais",
+  "categories": {
+    "fluxo": {
+      "label": "Fluxo / estado da negociação",
+      "description": "Onde o lead está no funil. As tags mais usadas pelo classifier IA.",
+      "tags": [
+        "🆕 Lead Novo",
+        "❄️ Lead Frio",
+        "💬 Em Negociação",
+        "Eu quero",
+        "Avaliação",
+        "✅ Agendou",
+        "🔄 Reagendou",
+        "❌ Faltou sem Aviso",
+        "🎯 Fechou Pacote",
+        "Retornar",
+        "Acompanhar",
+        "Não responde",
+        "Sem interesse ",
+        "cliente nova ",
+        "Cliente Recorrente",
+        "Cliente Inativa ",
+        "face campanha"
+      ]
+    },
+    "procedimentos_faciais": {
+      "label": "Procedimentos faciais",
+      "description": "Serviços e tecnologias de estética facial.",
+      "tags": [
+        "Estética Facial",
+        "Facial ",
+        "Limpeza de Pele",
+        "Clear Skin",
+        "Face Glow",
+        "Face Lift",
+        "Line Control",
+        "Skinbooster",
+        "Bioestimuladores",
+        "Injetáveis Premium",
+        "Toxina Botulínica",
+        "preenchimento ",
+        "Preenchimento Labial",
+        " Pump Lips",
+        "MMP (Microagulhamento)",
+        "Peeling Ultrassônico",
+        "Jato Plasma",
+        "Mesojectgun",
+        "Laser Quanta",
+        "Qplus",
+        "Ultraformer",
+        "Dermatologia",
+        "Hair Grow",
+        "Micropigmentação",
+        "Reconstrução de Sobrancelhas",
+        "Desing de Sombrancelha",
+        " Embelezamento do Olhar",
+        " Tríade da Face",
+        " Tríade da Pálpebra"
+      ]
+    },
+    "procedimentos_corporais": {
+      "label": "Procedimentos corporais",
+      "description": "Serviços e tecnologias de estética corporal e emagrecimento.",
+      "tags": [
+        "Estética Corporal",
+        " Emagrecimento 360°",
+        "Programa Tirzepatida",
+        "Especial Lipedema",
+        "CrioSlim",
+        "Criolipolise cortesia ",
+        "Carbox",
+        "Lipocavit",
+        "Enzimas Lipolíticas",
+        "Drenagem Linfática",
+        "Massagens Modeladoras",
+        "Flash Detox",
+        "Renew Body",
+        "StriaLift Pro",
+        " Radiofrequência",
+        "Hecus ",
+        "Tecnologias Avançadas",
+        "Banco de Colágeno",
+        "volumizacao glútea",
+        "Depilação a laser",
+        "Acompanhamento Nutricional",
+        "Soroterapia ",
+        "Soroterapia/Infusões",
+        "Pein"
+      ]
+    },
+    "manutencao": {
+      "label": "Manutenção / pós-venda",
+      "description": "Clientes em manutenção ou com pacote concluído.",
+      "tags": [
+        "Manutenção/Retoque",
+        "🔚 Pacote Finalizado"
+      ]
+    },
+    "operacional": {
+      "label": "Operacional / não enviar",
+      "description": "Tags operacionais, origem e bloqueios de contato. Não devem disparar follow-up.",
+      "tags": [
+        "NÃO ENVIAR",
+        "nao quer receber mensagem",
+        "Desqualificado",
+        "B.o",
+        "cliente insatisfeito ",
+        "INDICAÇÃO",
+        "Indicação ",
+        "Brinde",
+        "Recebeu Voucher",
+        "Vale Presente ",
+        "VIP - Sala Especial",
+        "clientes Anne ",
+        "clientes Priscila ",
+        "Clientes “Maria” cortesia ",
+        "Espera cliente Sonaria 1",
+        "espera Dra Ana ",
+        "Agenda Dr Douglas dia 14",
+        "Etiqueta Teste 1"
+      ]
+    }
+  }
+}

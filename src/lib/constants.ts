@@ -5,17 +5,18 @@ export const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY?.trim() 
 // Todas as chamadas WTS passam por /api/wts/* (Vercel Function proxy) para evitar CORS
 // e manter o token server-side. Em dev local sem `vercel dev`, esse path não responde.
 export const WTS_BASE = '/api/wts';
-export const WTS_TOKEN = ''; // token vive no servidor (env WTS_TOKEN_MACAE)
-export const WHATSAPP_FROM = '5522988291037';
-export const CLIENT_HANDLE = 'macae';
+export const WTS_TOKEN = ''; // token vive no servidor (env WTS_TOKEN_ESTUDIO_MAIS)
+export const WHATSAPP_FROM = '5511956883655';
+export const CLIENT_HANDLE = 'estudio-mais';
 
-export const DEFAULT_PANEL_ID = '7fe38e2c-e582-469b-8e3e-0d37c7c06660';
+export const DEFAULT_PANEL_ID = '19440e47-cd18-4dbf-8f7b-1dcc1c71205a';
 
-// Macaé compartilha o projeto Supabase do Itupeva mas isola seus dados em
-// tabelas sufixadas. Mudar todos de uma vez se quiser apontar para outro tenant.
-export const TABLE_AUTO_FOLLOWUP_LOG = 'wts_auto_followup_log_macae';
-export const TABLE_PANEL_MAPPING = 'wts_panel_mapping_macae';
-export const TABLE_FOLLOWUP_RUNS = 'wts_auto_followup_runs_macae';
+// Estúdio Mais compartilha o projeto Supabase do Itupeva/Macaé mas isola seus
+// dados em tabelas sufixadas. wts_panel_mapping_estudio é uma VIEW que projeta
+// wts_panel_mapping_v2 no schema esperado pelo app.
+export const TABLE_AUTO_FOLLOWUP_LOG = 'wts_auto_followups_logs_estudio';
+export const TABLE_PANEL_MAPPING = 'wts_panel_mapping_estudio';
+export const TABLE_FOLLOWUP_RUNS = 'wts_auto_followups_runs_estudio';
 
 export const WTS_RATE_LIMIT_MS = 700;
 export const BULK_CONCURRENCY = 5;

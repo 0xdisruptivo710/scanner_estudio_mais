@@ -1,8 +1,8 @@
 async function handler(req: Request): Promise<Response> {
-  const token = process.env.WTS_TOKEN_MACAE || process.env.VITE_WTS_TOKEN_MACAE;
+  const token = process.env.WTS_TOKEN_ESTUDIO_MAIS || process.env.VITE_WTS_TOKEN_ESTUDIO_MAIS;
   if (!token) {
     return Response.json(
-      { error: 'WTS_TOKEN_MACAE not configured on server' },
+      { error: 'WTS_TOKEN_ESTUDIO_MAIS not configured on server' },
       { status: 500 },
     );
   }

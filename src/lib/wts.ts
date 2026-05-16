@@ -3,9 +3,9 @@ import type { WtsResult } from './types';
 
 /**
  * WhatsApp `from` number formatado conforme a WTS espera no /chat/v1/message/send.
- * Exemplo Macaé: "(22) 98829-1037" (não "5522988291037").
+ * Estúdio Mais: "(11) 95688-3655" (não "5511956883655").
  */
-export const WHATSAPP_FROM_FORMATTED = '(22) 98829-1037';
+export const WHATSAPP_FROM_FORMATTED = '(11) 95688-3655';
 
 /**
  * Normaliza um telefone pro formato pipe que a WTS retorna e aceita:

@@ -116,6 +116,12 @@ export function SuggestionDrawer({ row, open, onOpenChange, readOnly }: Props) {
               {row.session_id.slice(0, 8)}…
             </span>
           </SheetDescription>
+          <p className="text-[12px] text-subtle-foreground">
+            Atendente:{' '}
+            <span className="font-medium text-foreground">
+              {row.responsible_user_name ?? '—'}
+            </span>
+          </p>
         </SheetHeader>
 
         <div className="flex-1 space-y-5 overflow-y-auto bg-background px-6 py-6">

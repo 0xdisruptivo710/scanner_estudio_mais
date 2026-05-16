@@ -6,7 +6,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import tagsCurado from '@/data/tags-macae.json';
+import tagsCurado from '@/data/tags-estudio-mais.json';
 
 type Curado = {
   categories: Record<string, { label: string; tags: string[] }>;

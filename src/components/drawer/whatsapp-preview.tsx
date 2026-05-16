@@ -22,7 +22,7 @@ export function WhatsappPreview({ text }: { text: string }) {
           style={{ background: '#25D366' }}
           aria-hidden
         />
-        Face Doctor · Macaé
+        Estúdio Mais · Shopping Taboão
       </div>
 
       <div className="flex justify-end">

@@ -27,6 +27,9 @@ export type SuggestionRow = {
   customer_name: string | null;
   contact_id: string | null;
 
+  responsible_user_id: string | null;
+  responsible_user_name: string | null;
+
   classified_at: string;
   mode: Mode;
   is_followup: boolean | null;
