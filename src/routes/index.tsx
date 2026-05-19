@@ -4,6 +4,11 @@ import { Clock3 } from 'lucide-react';
 import { toast } from 'sonner';
 import { Route as rootRoute } from './__root';
 import { FilterTabs, type FilterKey } from '@/components/layout/filter-tabs';
+import {
+  AttendantSelect,
+  ALL_ATTENDANTS,
+  NO_ATTENDANT,
+} from '@/components/layout/attendant-select';
 import { SuggestionsTable } from '@/components/table/suggestions-table';
 import { BulkActionBar } from '@/components/layout/bulk-action-bar';
 import { SuggestionDrawer } from '@/components/drawer/suggestion-drawer';
@@ -24,6 +29,7 @@ function InboxPage() {
   const approve = useApprove();
 
   const [filter, setFilter] = useState<FilterKey>('all');
+  const [attendant, setAttendant] = useState<string>(ALL_ATTENDANTS);
   const [selected, setSelected] = useState<Set<number>>(new Set());
   const [openRow, setOpenRow] = useState<SuggestionRow | null>(null);
   const [progress, setProgress] = useState<{ done: number; total: number } | null>(null);
@@ -43,15 +49,26 @@ function InboxPage() {
   );
 
   const filtered = useMemo(() => {
-    if (filter === 'msg') return rows.filter((row) => row.suggest_message);
-    if (filter === 'tag') return rows.filter((row) => !row.suggest_message);
+    let out = rows;
+    if (attendant === NO_ATTENDANT) {
+      out = out.filter((row) => !row.responsible_user_name?.trim());
+    } else if (attendant !== ALL_ATTENDANTS) {
+      out = out.filter((row) => row.responsible_user_name?.trim() === attendant);
+    }
+    if (filter === 'msg') return out.filter((row) => row.suggest_message);
+    if (filter === 'tag') return out.filter((row) => !row.suggest_message);
     if (filter === 'cold')
-      return rows.filter(
+      return out.filter(
         (row) =>
           row.scenario === 'tag_only_no_engagement' || row.tag_applied === 'NÃO RESPONDE',
       );
-    return rows;
-  }, [rows, filter]);
+    return out;
+  }, [rows, filter, attendant]);
+
+  const handleAttendantChange = (v: string) => {
+    setAttendant(v);
+    setSelected(new Set());
+  };
 
   const selectedRows = useMemo(
     () => filtered.filter((r) => selected.has(r.id)),
@@ -113,7 +130,14 @@ function InboxPage() {
         </div>
       </header>
 
-      <FilterTabs filter={filter} onFilterChange={setFilter} counts={counts} />
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <FilterTabs filter={filter} onFilterChange={setFilter} counts={counts} />
+        <AttendantSelect
+          rows={rows}
+          value={attendant}
+          onChange={handleAttendantChange}
+        />
+      </div>
 
       <section className="overflow-hidden rounded-xl border border-border bg-surface shadow-card">
         <SuggestionsTable
